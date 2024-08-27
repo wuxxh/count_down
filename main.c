@@ -2,7 +2,14 @@
 
 #define TIMS (65536 - 9216) // 10ms¶¨Ê±
 
-sbit lcd1 = P2 ^ 0;
+sbit led1 = P2 ^ 0;
+sbit led2 = P2 ^ 1;
+sbit led3 = P2 ^ 2;
+sbit led4 = P2 ^ 3;
+sbit led5 = P2 ^ 4;
+sbit led6 = P2 ^ 5;
+sbit led7 = P2 ^ 6;
+sbit led8 = P2 ^ 7;
 
 sbit lsc = P2 ^ 4;
 sbit lsb = P2 ^ 3;
@@ -112,7 +119,34 @@ void main()
             record_display();
             break;
         case 1:
-            lcd1 = ~lcd1;
+            led1 = ~led1;
+            delay(1000);
+            led1 = ~led1;
+            delay(1000);
+            led2 = ~led2;
+            delay(1000);
+            led2 = ~led2;
+            delay(1000);
+            led3 = ~led3;
+            delay(1000);
+            led3 = ~led3;
+            delay(1000);
+            led4 = ~led4;
+            delay(1000);
+            led4 = ~led4;
+            delay(1000);
+            led5 = ~led5;
+            delay(1000);
+            led5 = ~led5;
+            delay(1000);
+            led6 = ~led6;
+            delay(1000);
+            led6 = ~led6;
+            delay(1000);
+            led7 = ~led7;
+            delay(1000);
+            led7 = ~led7;
+            delay(1000);
             break;
         case 2:
             break;
@@ -182,7 +216,7 @@ void exit0() interrupt 0
     {
         delay(1);
         if (key1 == 0)
-            lcd1 = ~lcd1;
+            led1 = ~led1;
     }
     while (!key1)
         ;
